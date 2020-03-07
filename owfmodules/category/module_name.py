@@ -29,8 +29,8 @@ class ClassName(AModule):
         Our code here
         :return:
         """
-        # Initialization example
-        # Detect and connect to the octowire hardware. Set the self.owf_serial variable if found.
+        # If detect_octowire is True then Detect and connect to the Octowire hardware. Else, connect to the Octowire
+        # using the parameters that were configured. It sets the self.owf_serial variable if the hardware is found.
         self.connect()
         if not self.owf_serial:
             return
