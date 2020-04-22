@@ -10,18 +10,26 @@ class ClassName(AModule):
             'description': '',
             'author': ''
         })
-        self.options = [
-            {"Name": "opt1", "Value": "", "Required": True, "Type": "bool",
-             "Description": "opt1 description", "Default": True},
-            {"Name": "opt2", "Value": "", "Required": True, "Type": "int",
-             "Description": "opt2 description", "Default": ""},
-            {"Name": "opt3", "Value": "", "Required": True, "Type": "string",
-             "Description": "opt3 description", "Default": "opt3 default value"}
-        ]
+        self.options = {
+            "opt1": {"Value": "", "Required": True, "Type": "bool",
+                     "Description": "opt1 description", "Default": True},
+            "opt2": {"Value": "", "Required": True, "Type": "int",
+                     "Description": "opt2 description", "Default": ""},
+            "opt3": {"Value": "", "Required": True, "Type": "string",
+                     "Description": "opt3 description", "Default": "opt3 default value"}
+        }
         # if necessary
-        self.advanced_options.append(
-            {"Name": "adv_opt_name", "Value": "", "Required": True, "Type": "int",
-             "Description": "Advanced option description", "Default": ""}
+        self.advanced_options.update({
+            "adv_opt_name1": {"Value": "", "Required": True, "Type": "int",
+                              "Description": "Advanced option description", "Default": ""},
+            "adv_opt_name2": {"Value": "", "Required": True, "Type": "int",
+                              "Description": "Advanced option description", "Default": ""}
+        })
+        # If this module depends of another
+        # The syntax of a requirement specifier is defined in full in PEP 508.
+        self.dependencies.append(
+            "owfmodules.avrisp.my_module>=1.0.0",
+            "owfmodules.spi.my_module>=1.0.0"
         )
 
     def run(self):
