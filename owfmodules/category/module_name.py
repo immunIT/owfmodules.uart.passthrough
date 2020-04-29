@@ -44,5 +44,7 @@ class ClassName(AModule):
             return
         try:
             """Call my function here"""
-        except (Exception, ValueError) as err:
+        except ValueError as err:
             self.logger.handle(err, self.logger.ERROR)
+        except Exception as err:
+            self.logger.handle("{}: {}".format(type(err).__name__, err), self.logger.ERROR)
