@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 
 __authors__ = ""
 __copyright__ = ""
-__license__ = "GPLv3"
+__license__ = "Apache 2.0"
 __version__ = "1.0.0"
 __contact__ = ""
 
@@ -23,7 +23,7 @@ setup(
     zip_safe=True,
     url='https://bitbucket.org/octowire/' + name,
     classifiers=[
-        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+        'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python :: 3',
         'Development Status :: 5 - Production/Stable'
     ],
