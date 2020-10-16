@@ -1,4 +1,3 @@
-# owfmodules.skeleton
-Module base repository
+# owfmodules.uart.passthrough
 
-Please read [CONTRIBUTING.md](https://github.com/immunIT/octowire-framework/blob/master/CONTRIBUTING.md) to follow the contribution process.
+Enter the Octowire UART passthrough and then open a miniterm session
