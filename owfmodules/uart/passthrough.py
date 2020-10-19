@@ -10,12 +10,12 @@ class ClassName(AModule):
         self.meta.update({
             'name': 'miniterm UART passthrough',
             'version': '1.0.0',
-            'description': 'Enter the Octowire UART passthrough and then open a miniterm session',
+            'description': 'Enter the Octowire UART passthrough and open a miniterm session',
             'author': 'Jordan Ovrè / Ghecko <jovre@immunit.ch>, Paul Duncan / Eresse <pduncan@immunit.ch>'
         })
         self.options = {
             "uart_interface": {"Value": "", "Required": True, "Type": "int",
-                               "Description": "The Octowire UART interface (0=UART0 or 1=UART1)", "Default": 0},
+                               "Description": "UART interface (0=UART0 or 1=UART1)", "Default": 0},
             "baudrate": {"Value": "", "Required": True, "Type": "int",
                          "Description": "The baudrate value to communicate with the target",
                          "Default": 9600},
@@ -25,7 +25,6 @@ class ClassName(AModule):
     def uart_pt_miniterm(self):
         """
         Open a miniterm session, with the Octowire in the UART passthrough mode
-        if a valid baudrate value is found and the user select 'yes' when asked.
         :return: Nothing.
         """
         # Set and configure UART interface
@@ -35,7 +34,7 @@ class ClassName(AModule):
         # Enter UART passthrough
         self.uart_instance.passthrough()
 
-        # Close the actual octowire serial instance
+        # Close the Octowire serial instance
         self.owf_serial.close()
         if self.config["OCTOWIRE"]["detect"]:
             octowire_port = detect_octowire(verbose=False)
