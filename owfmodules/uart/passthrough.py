@@ -1,12 +1,20 @@
+# -*- coding: utf-8 -*-
+
+# Octowire Framework
+# Copyright (c) ImmunIT - Jordan Ovrè / Paul Duncan
+# License: Apache 2.0
+# Paul Duncan / Eresse <pduncan@immunit.ch>
+# Jordan Ovrè / Ghecko <jovre@immunit.ch>
+
 from octowire_framework.module.AModule import AModule
 from octowire.utils.serial_utils import detect_octowire
 from octowire.uart import UART
 from octowire_framework.core.commands.miniterm import miniterm
 
 
-class ClassName(AModule):
+class Passthrough(AModule):
     def __init__(self, owf_config):
-        super(ClassName, self).__init__(owf_config)
+        super(Passthrough, self).__init__(owf_config)
         self.meta.update({
             'name': 'miniterm UART passthrough',
             'version': '1.0.0',
